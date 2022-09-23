@@ -1,0 +1,19 @@
+.M{
+    color: #fff;
+    font-weight: 700;
+    display: inline-block;
+    transform: rotate(10deg);
+    /* animation: rot 5s infinite linear; */
+}
+
+@keyframes rot
+{
+from
+{
+transform: rotateX(0deg);
+}
+to
+{
+transform: rotateY(360deg);
+}
+}

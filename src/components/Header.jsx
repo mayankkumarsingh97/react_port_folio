@@ -3,7 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import styled from 'styled-components'
+import styled ,{css} from 'styled-components'
 import { Button } from "../button/Button"
 import { Link } from 'react-router-dom';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -12,6 +12,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import PhoneCallbackIcon from '@mui/icons-material/PhoneCallback';
 import { useState } from 'react';
+import resume from "../resume/resume.pdf"
 const Navigation = styled.div`
     display: flex;
     justify-content: flex-end;
@@ -39,7 +40,7 @@ const SideBar = styled.aside`
 `
 const Contact = styled.form`
     position: relative;
-    top:60px;
+    /* top:20px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,6 +57,11 @@ const Contact = styled.form`
         padding:.35rem .35rem;
         border-radius: .25rem;
     }
+    @media (max-width:575px) {
+        .input,textarea{
+            width: 98%;
+        }
+  }
     
 `
 const ButtonSubmit = styled.button`
@@ -66,7 +72,12 @@ const ButtonSubmit = styled.button`
   color:black;
   font-weight: 700;
   border-radius: .25rem;
-  transition: all .3s ease;
+  /* transition: all .3s ease; */
+  @media (max-width:575px) {
+    width: 98%;
+    margin-bottom: 20px;
+  }
+ 
   :hover{
     background-color: #fff;
   }
@@ -78,7 +89,23 @@ const Section = styled.section`
  flex-direction: column;
  align-items: center;
  justify-content: center;
+ @media (max-width: 575px) {
+    height: auto;
+  }
+ .font{
+    font-size: .9rem;
+ }`
+
+const SectionMobile = styled.section`
+ display:flex;
+ padding-top:10px;
+ /* flex-direction: column; */
+ /* align-items: center; */
+ justify-content: space-evenly;
+ 
 `
+
+
 const Header = () => {
     const [data, setData] = useState({
         firstname: "",
@@ -104,25 +131,44 @@ const Header = () => {
         <Container fluid>
             <Row>
                 <Col md={7}>
+                    <Row className='d-md-none'>
+                        <Col>
+                        <Button><Nav.Link target="_blank" href={resume}> 
+                            <span style={{fontSize:"2rem"}}>C</span>URRICULUM <span style={{fontSize:"2rem"}}>V</span>ITAE</Nav.Link></Button>
+                        </Col>
+                        <Col>
+                     <SectionMobile>
+                     <Nav.Link target="blank" href="https://github.com/mayankkumarsingh97">
+                                    <GitHubIcon style={{fontSize:"2.6rem"}} /></Nav.Link>
+                                <Nav.Link><LinkedInIcon style={{fontSize:"2.6rem",color:"royalblue"}}/></Nav.Link>
+                                <Nav.Link><FacebookIcon style={{fontSize:"2.6rem"}} /></Nav.Link>
+                                <Nav.Link><YouTubeIcon style={{fontSize:"2.6rem",color:"red"}}/></Nav.Link>
+                                <Nav.Link></Nav.Link>
+                     </SectionMobile>
+                       
+                        
+                     
+                        </Col>
+                    </Row>
                     <Row>
-                        <Col md="3">
+                        <Col md="3" className='d-none d-md-block'>
                             <SideBar>
                                 <Nav.Link target="blank" href="https://github.com/mayankkumarsingh97">
-                                    <GitHubIcon /></Nav.Link>
-                                <Nav.Link><LinkedInIcon /></Nav.Link>
-                                <Nav.Link><FacebookIcon /></Nav.Link>
-                                <Nav.Link><YouTubeIcon /></Nav.Link>
+                                    <GitHubIcon style={{fontSize:"2.6rem"}} /></Nav.Link>
+                                <Nav.Link><LinkedInIcon style={{fontSize:"2.6rem",color:"royalblue"}}/></Nav.Link>
+                                <Nav.Link><FacebookIcon style={{fontSize:"2.6rem"}} /></Nav.Link>
+                                <Nav.Link><YouTubeIcon style={{fontSize:"2.6rem",color:"red"}}/></Nav.Link>
                                 <Nav.Link></Nav.Link>
 
                             </SideBar>
                         </Col>
-                        <Col md="9">
-                            <Section className='mt-5'>
-                                <h1>Hi, I am Mayank.</h1>
-                                <h2>Associtate. web Developer And Freelancer</h2>
-                                <h3><PhoneCallbackIcon /> Me</h3>
+                        <Col md={9}>
+                            <Section className='text-center mt-5'>
+                                <h1>Hi, I am <span style={{fontSize:"3rem"}} className='M'>M</span>ayank.</h1>
+                                <h2><span className='M'>A</span>ssoc. <span className='M'>W</span>eb  <span className='M'>D</span>eveloper And <span className='M'>F</span>reelancer</h2>
+                                <h3><span><PhoneCallbackIcon /></span> Me</h3>
                                 {/* <h3>Me At</h3> */}
-                                <h3>93&nbsp;10&nbsp;30&nbsp;75&nbsp;06</h3>
+                                <h3 style={{textShadow:"0 0 0 1rem #eee"}}>93&nbsp;10&nbsp;30&nbsp;75&nbsp;06</h3>
 
                             </Section>
                         </Col>
@@ -130,15 +176,16 @@ const Header = () => {
                 </Col>
 
                 <Col md={5}>
-                    <Navbar>
+                    <Navbar className="d-none d-md-block">
                         <Navigation>
-                            <Button><Nav.Link href="#home">CV</Nav.Link></Button>
+                            <Button><Nav.Link target="_blank" href={resume}> 
+                            <span style={{fontSize:"2rem"}}>C</span>URRICULUM <span style={{fontSize:"2rem"}}>V</span>ITAE</Nav.Link></Button>
 
 
                         </Navigation>
 
                     </Navbar>
-
+                     <h2 className='text-center mt-3'>Contact me.</h2>
                     <Contact action="">
                         <input className='input' type="text"
                             value={data.firstname}
