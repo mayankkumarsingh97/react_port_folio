@@ -179,7 +179,9 @@ const Header = () => {
                     <Navbar className="d-none d-md-block">
                         <Navigation>
                             <Button><Nav.Link target="_blank" href={resume}> 
-                            <span style={{fontSize:"2rem"}}>C</span>URRICULUM <span style={{fontSize:"2rem"}}>V</span>ITAE</Nav.Link></Button>
+                            <span style={{fontSize:"2rem"}}>C</span>URRICULUM 
+                            <span style={{fontSize:"2rem"}}>V</span>ITAE</Nav.Link>
+                            </Button>
 
 
                         </Navigation>
