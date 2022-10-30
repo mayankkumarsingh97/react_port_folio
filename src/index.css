@@ -1,6 +1,10 @@
+html{
+  scroll-behavior: smooth;
+}
 body {
+
   margin: 0;
-  /* font-family: 'Times New Roman', Times, serif; */
+  font-family: 'Times New Roman', Times, serif;
   font-family: 'Urbanist', sans-serif;
   background-color:rgb(168, 223, 237);
 }

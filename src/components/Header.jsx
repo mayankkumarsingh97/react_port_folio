@@ -3,7 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import styled ,{css} from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Button } from "../button/Button"
 import { Link } from 'react-router-dom';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -119,13 +119,13 @@ const Header = () => {
         e.preventDefault();
         const { name, value } = e.target;
         setData({
-          ...data,
-          [name]: value,
+            ...data,
+            [name]: value,
         })
-      }
-    const handleSubmit=()=>{
-      console.log(data)
-    }  
+    }
+    const handleSubmit = () => {
+        console.log(data)
+    }
     return (<>
 
         <Container fluid>
@@ -133,42 +133,47 @@ const Header = () => {
                 <Col md={7}>
                     <Row className='d-md-none'>
                         <Col>
-                        <Button><Nav.Link target="_blank" href={resume}> 
-                            <span style={{fontSize:"2rem"}}>C</span>URRICULUM <span style={{fontSize:"2rem"}}>V</span>ITAE</Nav.Link></Button>
+                            <Button><Nav.Link target="_blank" href={resume}>
+                                <span style={{ fontSize: "2rem" }}>C</span>URRICULUM <span style={{ fontSize: "2rem" }}>V</span>ITAE</Nav.Link>
+                            </Button>
+                            <Button><Nav.Link>
+                                About
+                                </Nav.Link>
+                            </Button>
                         </Col>
                         <Col>
-                     <SectionMobile>
-                     <Nav.Link target="blank" href="https://github.com/mayankkumarsingh97">
-                                    <GitHubIcon style={{fontSize:"2.6rem"}} /></Nav.Link>
-                                <Nav.Link><LinkedInIcon style={{fontSize:"2.6rem",color:"royalblue"}}/></Nav.Link>
-                                <Nav.Link><FacebookIcon style={{fontSize:"2.6rem"}} /></Nav.Link>
-                                <Nav.Link><YouTubeIcon style={{fontSize:"2.6rem",color:"red"}}/></Nav.Link>
+                            <SectionMobile>
+                                <Nav.Link target="blank" href="https://github.com/mayankkumarsingh97">
+                                    <GitHubIcon style={{ fontSize: "2.6rem" }} /></Nav.Link>
+                                <Nav.Link><LinkedInIcon style={{ fontSize: "2.6rem", color: "royalblue" }} /></Nav.Link>
+                                <Nav.Link><FacebookIcon style={{ fontSize: "2.6rem" }} /></Nav.Link>
+                                <Nav.Link><YouTubeIcon style={{ fontSize: "2.6rem", color: "red" }} /></Nav.Link>
                                 <Nav.Link></Nav.Link>
-                     </SectionMobile>
-                       
-                        
-                     
+                            </SectionMobile>
+
+
+
                         </Col>
                     </Row>
                     <Row>
                         <Col md="3" className='d-none d-md-block'>
                             <SideBar>
                                 <Nav.Link target="blank" href="https://github.com/mayankkumarsingh97">
-                                    <GitHubIcon style={{fontSize:"2.6rem"}} /></Nav.Link>
-                                <Nav.Link><LinkedInIcon style={{fontSize:"2.6rem",color:"royalblue"}}/></Nav.Link>
-                                <Nav.Link><FacebookIcon style={{fontSize:"2.6rem"}} /></Nav.Link>
-                                <Nav.Link><YouTubeIcon style={{fontSize:"2.6rem",color:"red"}}/></Nav.Link>
+                                    <GitHubIcon style={{ fontSize: "2.6rem" }} /></Nav.Link>
+                                <Nav.Link><LinkedInIcon style={{ fontSize: "2.6rem", color: "royalblue" }} /></Nav.Link>
+                                <Nav.Link><FacebookIcon style={{ fontSize: "2.6rem" }} /></Nav.Link>
+                                <Nav.Link><YouTubeIcon style={{ fontSize: "2.6rem", color: "red" }} /></Nav.Link>
                                 <Nav.Link></Nav.Link>
 
                             </SideBar>
                         </Col>
                         <Col md={9}>
                             <Section className='text-center mt-5'>
-                                <h1>Hi, I am <span style={{fontSize:"3rem"}} className='M'>M</span>ayank.</h1>
+                                <h1>Hi, I am  <span style={{ fontSize: "3rem" }} className='M'>M</span>ayank.</h1>
                                 <h2><span className='M'>A</span>ssoc. <span className='M'>W</span>eb  <span className='M'>D</span>eveloper And <span className='M'>F</span>reelancer</h2>
                                 <h3><span><PhoneCallbackIcon /></span> Me</h3>
                                 {/* <h3>Me At</h3> */}
-                                <h3 style={{textShadow:"0 0 0 1rem #eee"}}>93&nbsp;10&nbsp;30&nbsp;75&nbsp;06</h3>
+                                <h3 style={{ textShadow: "0 0 0 1rem #eee" }}>93&nbsp;10&nbsp;30&nbsp;75&nbsp;06</h3>
 
                             </Section>
                         </Col>
@@ -176,18 +181,28 @@ const Header = () => {
                 </Col>
 
                 <Col md={5}>
+                    {/* Desktop Navbar is here */}
                     <Navbar className="d-none d-md-block">
                         <Navigation>
-                            <Button><Nav.Link target="_blank" href={resume}> 
-                            <span style={{fontSize:"2rem"}}>C</span>URRICULUM 
-                            <span style={{fontSize:"2rem"}}>V</span>ITAE</Nav.Link>
+                        <Button><Nav.Link  href='#mywork'>
+                                <span style={{ fontSize: "2rem" }}>M</span>Y WORK
+                                </Nav.Link>
+                            </Button>
+                            <Button><Nav.Link target="_blank" href={resume}>
+                                <span style={{ fontSize: "2rem" }}>C</span>URRICULUM
+                                <span style={{ fontSize: "2rem" }}>V</span>ITAE
+                                </Nav.Link>
+                            </Button>
+                            <Button><Nav.Link href="#About">
+                                <span style={{ fontSize: "2rem" }}>A</span>BOUT
+                                </Nav.Link>
                             </Button>
 
 
                         </Navigation>
 
                     </Navbar>
-                     <h2 className='text-center mt-3'>Contact me.</h2>
+                    <h2 className='text-center mt-3'>Contact me.</h2>
                     <Contact action="">
                         <input className='input' type="text"
                             value={data.firstname}

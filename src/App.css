@@ -17,3 +17,33 @@ to
 transform: rotateY(360deg);
 }
 }
+
+.about_me_img{
+    /* border-radius: 10px; */
+    border-radius: 31% 69% 37% 63% / 63% 16% 84% 37% ;
+    width: 100%;
+    box-shadow: 0 0  15px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    /* transition: all .3s linear; */
+}
+@media (max-width:575px) {
+    .about_me_img{
+        border-radius: 0;
+        transition: none;
+        object-fit: contain;
+        box-shadow: 0 0  15px rgba(0, 0, 0, .5);
+        width: 98%;
+    }
+}
+.about_me_img:hover{
+    transform: scale(1.002);
+}
+
+.bgtrans{
+    background-color: transparent!important;
+}
+
+
+.accordion-button:focus {
+    box-shadow: none;
+}
