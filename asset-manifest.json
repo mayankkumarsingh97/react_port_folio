@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.925aeaa5.css",
+    "main.js": "/portfolio/static/js/main.bbd99167.js",
+    "static/media/mayank_img.jpeg": "/portfolio/static/media/mayank_img.a5e4a1f0076d25cfe573.jpeg",
+    "static/media/resume.pdf": "/portfolio/static/media/resume.6da7b3560a714d933a6f.pdf",
+    "index.html": "/portfolio/index.html",
+    "main.925aeaa5.css.map": "/portfolio/static/css/main.925aeaa5.css.map",
+    "main.bbd99167.js.map": "/portfolio/static/js/main.bbd99167.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.925aeaa5.css",
+    "static/js/main.bbd99167.js"
+  ]
+}
